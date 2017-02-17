@@ -34,7 +34,7 @@ public class SecretController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public List<Secret> getSecrets() {
-        secretService.addSecret(new Secret(new Pineapple("roel", "Goossens"),"ehgajkdgadkgaskd" ));
+        secretService.addSecret(new Secret(new Pineapple("roel", "Goossens"),new Photo("c/lol") ));
        return new ArrayList<Secret>(secretService.getAllSecrets());
     }
 
