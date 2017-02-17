@@ -1,15 +1,16 @@
 package com.cegekaschool.controllers;
 
 import com.cegekaschool.domain.secret.SecretService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+
+import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  * Created by roelg on 17/02/2017.
  */
-@Component
+@Named
 public class SecretController {
-@Autowired
+    @Inject
     private SecretService secretService;
 
 }

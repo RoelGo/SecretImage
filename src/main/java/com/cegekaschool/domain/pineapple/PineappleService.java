@@ -3,11 +3,13 @@ package com.cegekaschool.domain.pineapple;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.List;
 
-@Component
+@Named
 public class PineappleService {
-    @Autowired
+    @Inject
     PineappleRepository pineappleRepository = new PineappleRepository();
 
     public List<Pineapple> getAllPineapples(){

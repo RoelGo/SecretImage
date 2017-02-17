@@ -2,11 +2,12 @@ package com.cegekaschool.domain.pineapple;
 
 import org.springframework.stereotype.Component;
 
+import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-@Component
+@Named
 public class PineappleRepository {
     HashSet<Pineapple> pineapples = new HashSet<>();
 

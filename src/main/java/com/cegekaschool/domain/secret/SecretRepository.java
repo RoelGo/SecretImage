@@ -2,12 +2,13 @@ package com.cegekaschool.domain.secret;
 
 import org.springframework.stereotype.Component;
 
+import javax.inject.Named;
 import java.util.HashSet;
 
 /**
  * Created by roelg on 17/02/2017.
  */
-@Component
+@Named
 public class SecretRepository {
 
     private HashSet<Secret> secretSet= new HashSet<>();
