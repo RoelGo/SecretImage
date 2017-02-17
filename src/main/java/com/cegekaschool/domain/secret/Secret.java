@@ -8,9 +8,9 @@ import com.cegekaschool.domain.pineapple.Pineapple;
  */
 public class Secret {
     private Pineapple pineapple;
-    private Photo photo;
+    private String photo;
 
-    public Secret(Pineapple pineapple, Photo photo) {
+    public Secret(Pineapple pineapple, String photo) {
         this.pineapple = pineapple;
         this.photo = photo;
     }
@@ -19,7 +19,7 @@ public class Secret {
         return pineapple;
     }
 
-    public Photo getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 }
