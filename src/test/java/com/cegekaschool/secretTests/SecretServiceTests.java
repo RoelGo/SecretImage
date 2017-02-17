@@ -28,17 +28,10 @@ public class SecretServiceTests {
     @Mock
     private Secret testSecret1;
 
-    @Before
-    public void setUp() throws Exception {
-        testSecretService=new SecretService();
-
-
-    }
-
     @Test
     public void CheckIf_SecretService_Calls_SecretRepositryAddMethod(){
         testSecretService.addSecret(testSecret1);
-        verify(secretRepository.addSecret(testSecret1));
+        verify(secretRepository).addSecret(testSecret1);
 
     }
 }
