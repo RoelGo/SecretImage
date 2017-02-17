@@ -34,4 +34,10 @@ public class SecretServiceTests {
         verify(secretRepository).addSecret(testSecret1);
 
     }
+    @Test
+    public void CheckIf_SecretService_Calls_SecretRepositryGetALlMethod(){
+        testSecretService.getAllSecrets();
+        verify(secretRepository).getAllSecrets();
+
+    }
 }
