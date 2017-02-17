@@ -10,7 +10,7 @@ import java.util.List;
 @Named
 public class PineappleService {
     @Inject
-    PineappleRepository pineappleRepository = new PineappleRepository();
+    PineappleRepository pineappleRepository;
 
     public List<Pineapple> getAllPineapples(){
         return pineappleRepository.getAllPineapples();

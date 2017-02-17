@@ -1,4 +1,4 @@
-package com.cegekaschool;
+package com.cegekaschool.pineappleTests;
 
 import com.cegekaschool.domain.pineapple.Pineapple;
 import com.cegekaschool.domain.pineapple.PineappleRepository;
