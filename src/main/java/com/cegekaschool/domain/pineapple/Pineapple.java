@@ -7,6 +7,9 @@ public class Pineapple {
     private String firstName;
     private String lastName;
 
+    public Pineapple() {
+    }
+
     public Pineapple(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;

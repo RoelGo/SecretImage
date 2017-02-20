@@ -10,6 +10,9 @@ public class Secret {
     private Pineapple pineapple;
     private Photo photo;
 
+    public Secret() {
+    }
+
     public Secret(Pineapple pineapple, Photo photo) {
         this.pineapple = pineapple;
         this.photo = photo;

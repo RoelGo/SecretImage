@@ -6,6 +6,9 @@ package com.cegekaschool.domain.photo;
 public class Photo {
     String photoLocation;
 
+    public Photo() {
+    }
+
     public Photo(String photoLocation) {
         this.photoLocation = photoLocation;
     }
