@@ -17,4 +17,18 @@ public class Photo {
         return photoLocation;
     }
 
+    @Override
+    public boolean equals(Object o) {   
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Photo photo = (Photo) o;
+
+        return photoLocation != null ? photoLocation.equals(photo.photoLocation) : photo.photoLocation == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return photoLocation != null ? photoLocation.hashCode() : 0;
+    }
 }

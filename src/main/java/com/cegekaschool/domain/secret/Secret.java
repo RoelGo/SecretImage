@@ -25,4 +25,22 @@ public class Secret {
     public Photo getPhoto() {
         return photo;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Secret secret = (Secret) o;
+
+        if (pineapple != null ? !pineapple.equals(secret.pineapple) : secret.pineapple != null) return false;
+        return photo != null ? photo.equals(secret.photo) : secret.photo == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = pineapple != null ? pineapple.hashCode() : 0;
+        result = 31 * result + (photo != null ? photo.hashCode() : 0);
+        return result;
+    }
 }

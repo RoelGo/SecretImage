@@ -30,14 +30,14 @@ public class Pineapple {
 
         Pineapple pineapple = (Pineapple) o;
 
-        if (!firstName.equals(pineapple.firstName)) return false;
-        return lastName.equals(pineapple.lastName);
+        if (firstName != null ? !firstName.equals(pineapple.firstName) : pineapple.firstName != null) return false;
+        return lastName != null ? lastName.equals(pineapple.lastName) : pineapple.lastName == null;
     }
 
     @Override
     public int hashCode() {
-        int result = firstName.hashCode();
-        result = 31 * result + lastName.hashCode();
+        int result = firstName != null ? firstName.hashCode() : 0;
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
         return result;
     }
 }
