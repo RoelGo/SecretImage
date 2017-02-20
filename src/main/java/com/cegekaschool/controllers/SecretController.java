@@ -5,6 +5,7 @@ import com.cegekaschool.domain.pineapple.Pineapple;
 import com.cegekaschool.domain.secret.Secret;
 import com.cegekaschool.domain.secret.SecretService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,14 +29,13 @@ public class SecretController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    public void createSecret(Secret secret) {
+    public void createSecret(@RequestBody Secret secret) {
         secretService.addSecret(secret);
     }
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public List<Secret> getSecrets() {
-        secretService.addSecret(new Secret(new Pineapple("roel", "Goossens"),new Photo("c/lol") ));
-       return new ArrayList<Secret>(secretService.getAllSecrets());
+    public HashSet<Secret> getSecrets() {
+       return secretService.getAllSecrets();
     }
 
 
