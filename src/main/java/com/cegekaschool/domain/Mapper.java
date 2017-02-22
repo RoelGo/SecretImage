@@ -29,11 +29,11 @@ public class Mapper {
         return new Secret(id, mapPineapple(secretDTO.getPineapple()), mapPhoto(secretDTO.getPhoto()));
     }
 
-    private Photo mapPhoto(PhotoDTO photo) {
+    public Photo mapPhoto(PhotoDTO photo) {
         return photoService.addPhoto(photo.getPhotoLocation());
     }
 
-    private Pineapple mapPineapple(PineappleDTO pineappleDTO) {
+    public Pineapple mapPineapple(PineappleDTO pineappleDTO) {
         return pineappleService.addPineapple(pineappleDTO.getFirstName(), pineappleDTO.getLastName());
     }
 
