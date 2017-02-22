@@ -10,14 +10,13 @@ import javax.persistence.*;
  */
 @Entity
 public class Secret {
+
     @Id
-    @Column(name="SECRET_ID")
+    @Column(name = "SECRET_ID")
     private long id;
-    @ManyToOne(cascade=CascadeType.ALL,fetch= FetchType.EAGER)
-    //@JoinTable(name = "PINEAPPLE", joinColumns= @JoinColumn(name="SECRET_ID"))
+    @ManyToOne(cascade = CascadeType.ALL)
     private Pineapple pineapple;
-    @ManyToOne(cascade=CascadeType.ALL,fetch= FetchType.EAGER)
-    //@JoinTable(name = "PHOTO", joinColumns= @JoinColumn(name="SECRET_ID"))
+    @ManyToOne(cascade = CascadeType.ALL)
     private Photo photo;
 
     private Secret() {
