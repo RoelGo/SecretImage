@@ -14,9 +14,9 @@ public class Secret {
     @Id
     @Column(name = "SECRET_ID")
     private long id;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne
     private Pineapple pineapple;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne
     private Photo photo;
 
     private Secret() {
