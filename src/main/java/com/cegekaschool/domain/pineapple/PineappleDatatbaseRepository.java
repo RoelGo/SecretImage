@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface PineappleDatatbaseRepository extends CrudRepository<Pineapple, Long> {
 
+    Pineapple findByFirstNameAndLastName(String firstName, String lastName);
 }
