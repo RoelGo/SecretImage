@@ -1,7 +1,5 @@
 package com.cegekaschool.domain.secret;
 
-import org.springframework.stereotype.Component;
-
 import javax.inject.Named;
 import java.util.HashSet;
 
@@ -11,7 +9,7 @@ import java.util.HashSet;
 @Named
 public class SecretRepository {
 
-    private HashSet<Secret> secretSet= new HashSet<>();
+    private HashSet<Secret> secretSet = new HashSet<>();
 
 
     public HashSet<Secret> getAllSecrets() {
