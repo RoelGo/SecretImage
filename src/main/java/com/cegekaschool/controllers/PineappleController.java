@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.inject.Inject;
-import java.util.List;
 
 @Controller
 @RequestMapping("/pineapple")
@@ -19,7 +18,7 @@ public class PineappleController {
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    List<Pineapple> getPineapples() {
+    Iterable<Pineapple> getPineapples() {
         return pineappleService.getAllPineapples();
     }
 
