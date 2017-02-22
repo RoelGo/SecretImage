@@ -1,7 +1,6 @@
 package com.cegekaschool.domain.secret;
 
 import com.cegekaschool.domain.Mapper;
-import com.cegekaschool.domain.pineapple.PineappleService;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -15,13 +14,24 @@ public class SecretService {
 
     private final AtomicLong counter = new AtomicLong();
     @Inject
+    private
     SecretDatabaseRepository secretRepository;
 
     @Inject
+    private
     Mapper mapper;
 
-    public void addSecret(SecretDTO secret) {
-        secretRepository.save(mapper.mapSecret(counter.incrementAndGet(), secret));
+    public Secret addSecret(SecretDTO secretDTO) {
+        Secret output = findSecret(secretDTO);
+        if (output == null) {
+            output = mapper.mapSecret(counter.incrementAndGet(), secretDTO);
+        }
+        secretRepository.save(output);
+        return output;
+    }
+
+    private Secret findSecret(SecretDTO secretDTO) {
+        return secretRepository.findByPineappleAndPhoto(mapper.mapPineapple(secretDTO.getPineapple()), mapper.mapPhoto(secretDTO.getPhoto()));
     }
 
     public Iterable<Secret> getAllSecrets() {
