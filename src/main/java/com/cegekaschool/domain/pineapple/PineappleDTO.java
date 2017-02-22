@@ -1,12 +1,9 @@
 package com.cegekaschool.domain.pineapple;
 
-import java.security.PublicKey;
-
 /**
  * Created by roelg on 22/02/2017.
  */
-public class PineappleDTO
-{
+public class PineappleDTO {
     private String firstName;
     private String lastName;
 
@@ -26,8 +23,8 @@ public class PineappleDTO
         return lastName;
     }
 
-    public Pineapple toPineapple(long id){
-        return new Pineapple(id, getFirstName(),getLastName());
+    public Pineapple toPineapple(long id) {
+        return new Pineapple(id, getFirstName(), getLastName());
     }
 
     @Override
