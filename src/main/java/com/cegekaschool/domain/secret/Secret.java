@@ -10,7 +10,7 @@ public class Secret {
     private Pineapple pineapple;
     private Photo photo;
 
-    public Secret() {
+    private Secret() {
     }
 
     public Secret(Pineapple pineapple, Photo photo) {
