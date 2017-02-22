@@ -1,8 +1,6 @@
 package com.cegekaschool.domain.secret;
 
-import com.cegekaschool.domain.photo.Photo;
 import com.cegekaschool.domain.photo.PhotoDTO;
-import com.cegekaschool.domain.pineapple.Pineapple;
 import com.cegekaschool.domain.pineapple.PineappleDTO;
 
 /**

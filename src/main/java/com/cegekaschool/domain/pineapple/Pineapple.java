@@ -2,7 +2,6 @@ package com.cegekaschool.domain.pineapple;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -11,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 public class Pineapple {
     @Id
-    @Column(name="PINEAPPLE_ID")
+    @Column(name = "PINEAPPLE_ID")
     private long id;
     private String firstName;
     private String lastName;

@@ -1,6 +1,5 @@
 package com.cegekaschool.controllers;
 
-import com.cegekaschool.domain.pineapple.PineappleService;
 import com.cegekaschool.domain.secret.Secret;
 import com.cegekaschool.domain.secret.SecretDTO;
 import com.cegekaschool.domain.secret.SecretService;

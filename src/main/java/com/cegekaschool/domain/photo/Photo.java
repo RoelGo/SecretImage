@@ -2,7 +2,6 @@ package com.cegekaschool.domain.photo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -11,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 public class Photo {
     @Id
-    @Column(name="PHOTO_ID")
+    @Column(name = "PHOTO_ID")
     Long id;
     String photoLocation;
 
@@ -20,10 +19,6 @@ public class Photo {
 
     public Photo(Long id, String photoLocation) {
         this.id = id;
-        this.photoLocation = photoLocation;
-    }
-
-    public Photo(String photoLocation) {
         this.photoLocation = photoLocation;
     }
 
