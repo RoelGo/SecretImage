@@ -1,22 +1,23 @@
 package com.cegekaschool.domain.pineapple;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 @Named
 public class PineappleService {
     @Inject
-    PineappleRepository pineappleRepository;
+    PineappleDatatbaseRepository pineappleRepository;
 
-    public List<Pineapple> getAllPineapples(){
-        return pineappleRepository.getAllPineapples();
+    private final AtomicLong counter = new AtomicLong();
+
+    public Iterable<Pineapple> getAllPineapples() {
+        return pineappleRepository.findAll();
     }
 
-    public void addPineapple(String firstName, String lastName){
-        pineappleRepository.addPineapple(new Pineapple(firstName, lastName));
+    public Pineapple addPineapple(String firstName, String lastName) {
+        Pineapple output = new Pineapple(counter.incrementAndGet(), firstName, lastName);
+        pineappleRepository.save(output);
+        return output;
     }
 }

@@ -1,10 +1,11 @@
 package com.cegekaschool.domain.secret;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.cegekaschool.domain.Mapper;
+import com.cegekaschool.domain.pineapple.PineappleService;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.util.HashSet;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Created by roelg on 17/02/2017.
@@ -12,15 +13,19 @@ import java.util.HashSet;
 @Named
 public class SecretService {
 
+    private final AtomicLong counter = new AtomicLong();
     @Inject
-    SecretRepository secretRepository;
+    SecretDatabaseRepository secretRepository;
 
-    public void addSecret(Secret secret) {
-        secretRepository.addSecret(secret);
+    @Inject
+    Mapper mapper;
+
+    public void addSecret(SecretDTO secret) {
+        secretRepository.save(mapper.mapSecret(counter.incrementAndGet(), secret));
     }
 
-    public HashSet<Secret> getAllSecrets() {
-    return secretRepository.getAllSecrets();
+    public Iterable<Secret> getAllSecrets() {
+        return secretRepository.findAll();
     }
 
 }
