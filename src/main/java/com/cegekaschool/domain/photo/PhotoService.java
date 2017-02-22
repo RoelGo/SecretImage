@@ -15,13 +15,21 @@ public class PhotoService {
     @Inject
     PhotoDatabaseRepository photoRepository;
 
-    public Iterable<Photo> getAllPineapples() {
+    public Iterable<Photo> getAllPhotos() {
         return photoRepository.findAll();
     }
 
     public Photo addPhoto(String photoLocation) {
-        Photo output = new Photo(counter.incrementAndGet(), photoLocation);
+        Photo output = findPhoto(photoLocation);
+        if (output == null) {
+            output = new Photo(counter.incrementAndGet(), photoLocation);
+        }
         photoRepository.save(output);
         return output;
     }
+
+    private Photo findPhoto(String photoLocation) {
+        return photoRepository.findByPhotoLocation(photoLocation);
+    }
+
 }
